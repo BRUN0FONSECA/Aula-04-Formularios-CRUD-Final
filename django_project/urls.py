@@ -29,5 +29,3 @@ urlpatterns = [
   path("surfistas/delete/<id>",views.delete_surfista),
   path("Fsurf/delete/<id>",views.delete_fsurfista),
   path("lugares/delete/<id>",views.delete_lugar),
-
-]
