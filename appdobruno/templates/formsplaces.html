@@ -1,0 +1,22 @@
+<h1>{{ action }} Local</h1>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome:</label>
+    <input name="title" value="{{lugar.title}}">
+  </div>
+    <div>
+    <label>País:</label>
+    <input name="country" value="{{lugar.country}}">
+  </div>
+    <div>
+    <label>Data de Início:</label>
+    <input type="date" name="InitialDate" value="{{lugar.InitialDate}}">
+  </div>
+    <div>
+    <label>Data de Término:</label>
+    <input type="date" name="FinalDate" value="{{lugar.FinalDate}}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>

@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bruno Peres Guimarães Fonseca</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Vithkuqi:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-color:black", style="color:white">
+<span class="white">
+  <div class= "centralizado">
+  <h1><u>Surfe Profissional</u> </h1>
+<h2><i>Por Bruno Peres Guimarães Fonseca</i></h2>
+
+</span>
+    <span class="fonte">
+<span style="text-align: justify;" class="white">
+  <p>
+    O <b>surfe</b> é um esporte que vem crescendo muito ao longo dos anos e principalmente no Brasil. Logo, o anúncio de que ele seria um dos novos esportes que seriam introduzidos nos Jogos Olímpicos de Tóquio em 2020 não foi surpresa. Esse acontecimento consolidou a <a href="https://www.worldsurfleague.com/" target="_blank">WSL</a>(World Surf League) como liga e o <b>surfe</b> como um esporte profissional.
+  </p>
+<div class="centralizado">
+  <img src="https://imageproxy.swm.digital/image?u=https%3A%2F%2Fproduction-mediacms-utility-hsyp63r9v13b.s3-ap-southeast-2.amazonaws.com%2Fmedia%2F69432%2Fwsl_16_9-show_movie-card.jpg&format=jpeg&w=1200&q=80" width="500">
+</div>
+  <p> O <b>CT (Championship Tour) da WSL</b> é como se fosse a Série A do Brasileirão onde há 36 competidores masculinos e 18 femininos. Durante o ano, há diversas etapas ao redor do mundo, cada um com um tipo de onda diferente.</p>
+<span class="centralizado">
+<h2>Etapas da WSL</h2>
+<!--<ul>
+  <li>Pipeline, Havaí</li>
+  <li>Sunset, Havaí</li>
+  <li>Peniche, Portugal</li>
+  <li>Bells Beach, Austrália</li>
+  <li>Margaret River, Western Australia</li>
+  <li>Surf Ranch, EUA</li>
+  <li>Punta Roca, El Salvador</li>
+  <li>Saquarema, Brasil</li>
+  <li>Trestles, EUA</li>
+  <li>Jeffreys Bay, África do Sul</li>
+  <li>Teahupo’o, Tahiti</li>
+</ul>-->
+<ul >
+  {% for lugar in lugares%}
+<li> {{lugar.title}}<a href="/lugares/update/{{ lugar.id }}">  Atualizar</a>
+  <a href="/lugares/delete/{{ lugar.id }}"> Remover</a></li>
+  {% endfor %}
+</ul>
+<a href="/lugares">Adicionar Novo Local</a>
+<p>A posição que cada competidor fica dentro de uma etapa equivale a uma certa quantidade de pontos.Enquanto o campeonato anual é realizado em "pontos corridos", as etapas são disputadas em formato eliminatório. No masculino, são 34 membros na elite. A cada etapa eles ganham a companhia de outros dois surfistas, oriundos de convite e, em algumas vezes, de uma triagem (torneio qualificatório), totalizando 36 competidores. A etapa é dividida em oito fases. E ao ganhar cada fase, o surfista ganha uma quantidade diferente de pontos.  </p>
+<h2>Tabela de Pontuação</h2>
+  <table border="1">
+<tr>
+<th>Posição</th>
+<th>Pontuação</th>
+</tr>
+<tr>
+<td>1º lugar</td>
+<td>10.000 pontos</td>
+</tr>
+<tr>
+<td>2º lugar</td>
+<td>8.000 pontos</td>
+</tr>
+    <tr>
+<td>3º lugar</td>
+<td>6.500 pontos</td>
+</tr>
+  <tr>
+<td>5º lugar</td>
+<td>5.200 pontos</td>
+</tr>
+  <tr>
+<td>9º lugar</td>
+<td>4.000 pontos</td>
+</tr>
+  <tr>
+<td>13º lugar</td>
+<td>1.750 pontos</td>
+</tr>
+  <tr>
+<td>25º lugar ou Lesionado</td>
+<td>500 pontos</td>
+</tr>
+  </table>
+
+<p>Para a etapa final, os 5 melhores surfistas do ranking são selecionados para competir pelo título de melhor do mundo. Onde o quinto colocado enfrentará o quarto, o vencedor enfretará o terceiro e assim por diante até chegar na disputa com o primeiro colocado.</p>
+  <h2>Finals 5 Masculino 2023</h2>
+  <!--<ol>
+  <li><a href="https://www.instagram.com/filipetoledo/?hl=ptm/" target="_blank">Filipe Toledo</a> (Brasil)</li>
+  <li>Griffin Colapinto (EUA)</li>
+  <li>Ethan Ewing (Autrália)</li>
+  <li>João Chianca (Brasil)</li>
+  <li>Jack Robinson (Autrália)</li>
+  </ol>-->
+<ol >
+  {% for s in surfistas%}
+<li> {{s.title}}<a href="/surfistas/update/{{ s.id }}">  Atualizar</a><a href="/surfistas/delete/{{ s.id }}"> Remover</a></li>
+  {% endfor %}
+</ol>
+<a href="/surfistas">Adicionar Novo Surfista</a>
+<img src="https://jblitoral.com.br/wp-content/uploads/2022/08/Filipe-Toledo-Reproducao-Twitter.jpg" width="500">
+
+
+  <h2>Finals 5 Feminino 2023</h2>
+<!--  <ol>
+  <li><a href="https://www.instagram.com/rissmoore10/" target="_blank">Carissa Moore</a> (EUA/Havaí)</li>
+  <li>Tyler Wright (Austrália)</li>
+  <li>Caroline Marks (EUA)</li>
+  <li>Molly Picklum (Austrália)</li>
+  <li>Caitlin Simmers (EUA)</li>
+  </ol>-->
+<ol >
+  {% for f in Fsurf %}
+<li> {{f.title}}<a href="/Fsurf/update/{{ f.id }}">  Atualizar</a><a href="/Fsurf/delete/{{ f.id }}"> Remover</a></li>
+  {% endfor %}
+</ol>
+<a href="/Fsurf">Adicionar Nova Surfista</a>
+  <img src="https://s2-ge.glbimg.com/uG74sLiMGJYZz_0ZWbgZ280jT_c=/0x0:2400x1600/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/p/Q/8Zqm7sSOeeP9Kzv4W2FQ/carissa-moore-23pipe-8321-tony-heff.jpg" width="500">
+
+  <p>
+    A final ocorrerá no período de 08 à 16 de Setembro de 2023 em Trestles, EUA.</p>
+    <img src="https://www.surfholidays.com/assets/images/blog/2015-09-08-legendary-surf-spot-trestles-3.jpg" width="500">
+
+    </span>
+  </span>
+  <script src="(% static 'js/scripts.js' %)"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<h1>{{ type }} Surfista</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome:</label>
+    <input name="title" value="{{fsurfista.title}}">
+  </div>
+    <div>
+    <label>Nacionalidade:</label>
+    <input name="nacionality" value="{{fsurfista.nacionality}}">
+  </div>
+    <div>
+    <label>Títulos Mundiais:</label>
+    <input type="number" name="WorldTitles" value="{{fsurfista.WorldTitles}}">
+  </div>
+    <div>
+    <label>Base:</label>
+    <input name="stance" value="{{fsurfista.stance}}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>

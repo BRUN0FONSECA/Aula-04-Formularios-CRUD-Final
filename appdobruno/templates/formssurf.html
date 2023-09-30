@@ -1,0 +1,23 @@
+<h1>{{ action }} Surfista</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome:</label>
+    <input name="title" value="{{surfista.title}}">
+  </div>
+    <div>
+    <label>Nacionalidade:</label>
+    <input name="nacionality" value="{{surfista.nacionality}}">
+  </div>
+    <div>
+    <label>Títulos Mundiais:</label>
+    <input type="number" name="WorldTitles" value="{{surfista.WorldTitles}}">
+  </div>
+    <div>
+    <label>Base:</label>
+    <input name="stance" value="{{surfista.stance}}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
